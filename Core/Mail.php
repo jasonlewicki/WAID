@@ -16,6 +16,7 @@ class Mail {
 	
 	// Constructor
 	public function __construct($db_conn, $db) {
+		
 		$this -> db_conn = $db_conn;
 		$this -> db = $db;
 		
