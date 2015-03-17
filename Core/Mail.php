@@ -47,6 +47,7 @@ class Mail {
 		return;		
 	}
 	
+	// This function pulls down mail from the DB based on the key and language
 	private function mailGetByNameAndLanguage($email_name, $locale_language_id){
 		$sql_str = "CALL " . $this -> db . ".mailGetByNameAndLanguage('$email_name', $locale_language_id)";
 		return $this -> db_conn -> getRow($sql_str);	
