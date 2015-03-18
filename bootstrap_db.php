@@ -2,16 +2,16 @@
 
 # This file is if you need the WAID framework for just the database. For instance Cron jobs.
 
-/**
+/*******************************
  * Include the necessary files
- */
+ ******************************/
  
 // Autoloader
 include WAID_ROOT.DIRECTORY_SEPARATOR.'autoload.php';
 
-/**
- * Database
- */
+/*******************************
+ * 			Database
+ ******************************/
 
 // Database Config
 include APP_ROOT.DIRECTORY_SEPARATOR.'Configs'.DIRECTORY_SEPARATOR.'database.php';

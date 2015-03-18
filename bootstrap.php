@@ -1,15 +1,15 @@
 <?php
 
-/**
+/*******************************
  * Include the necessary files
- */
+ ******************************/
  
 // Autoloader
 include WAID_ROOT.DIRECTORY_SEPARATOR.'autoload.php';
 
-/**
- * Database
- */
+/*******************************
+ * 			Database
+ ******************************/
 
 // Database Config
 include APP_ROOT.DIRECTORY_SEPARATOR.'Configs'.DIRECTORY_SEPARATOR.'database.php';
@@ -19,9 +19,9 @@ include WAID_ROOT.DIRECTORY_SEPARATOR.'Core/Database.php';
 WAID\Core\DatabaseFactory::constructDatabaseFactory($database[ENVIRONMENT]['host'], $database[ENVIRONMENT]['username'], $database[ENVIRONMENT]['password'], $database[ENVIRONMENT]['database']);
 
 
-/**
- * Router
- */
+/*******************************
+ * 			Router
+ ******************************/
 
 // Create Router Object
 $router = new WAID\Core\Router();
@@ -38,9 +38,9 @@ foreach (glob($dir.DIRECTORY_SEPARATOR.'*.php') as $filename) {
 $match = $router->match();
 
 
-/**
- * Request
- */
+/*******************************
+ * 			Request
+ ******************************/
 
 // Initialize the request class, which parses the incoming call.
 $request_obj = new WAID\Core\Request($router, $match);
@@ -53,9 +53,9 @@ $status_arr = $request_obj->getStatus();
 $response = $request_obj->getResponse();
 
 
-/**
- * Response
- */
+/*******************************
+ * 			Response
+ ******************************/
  
 // Initialize the response class, which return data to the sender.
 $response_obj = new WAID\Core\Response($status_arr, $response);
